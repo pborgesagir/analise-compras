@@ -13,5 +13,6 @@ st.title("DASHBOARD - PADRONIZAÇÃO AGIR")
 conn = st.connection("gsheets", type=GSheetsConnection)
 
 df = conn.read(spreadsheet=url, usecols=list(range(34)))
+df = df.drop_duplicates()
 
 st.dataframe(df)
