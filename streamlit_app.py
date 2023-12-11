@@ -12,6 +12,6 @@ url = "https://docs.google.com/spreadsheets/d/1DqyHkjSP-ykf1FqQp7R2FSbuUIGyIRgpa
 st.title("DASHBOARD - PADRONIZAÇÃO AGIR")
 conn = st.connection("gsheets", type=GSheetsConnection)
 
-df = conn.read(spreadsheet=url, usecols=list(range(3)))
+df = conn.read(spreadsheet=url, usecols=list(range(34)))
 
 st.dataframe(df)
