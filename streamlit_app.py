@@ -8,7 +8,7 @@ import numpy as np
 
 
 st.set_page_config(layout="wide")
-url = "https://docs.google.com/spreadsheets/d/1DqyHkjSP-ykf1FqQp7R2FSbuUIGyIRgpad9J9WDKXck/edit#gid=0"
+url = "https://docs.google.com/spreadsheets/d/1DqyHkjSP-ykf1FqQp7R2FSbuUIGyIRgpad9J9WDKXck"
 st.title("DASHBOARD - PADRONIZAÇÃO AGIR")
 conn = st.connection("gsheets", type=GSheetsConnection)
 
