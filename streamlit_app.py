@@ -1,15 +1,15 @@
 import streamlit as st
 from streamlit_gsheets import GSheetsConnection
 import pandas as pd
+from datetime import datetime
+import plotly.express as px
+import plotly.graph_objects as go
+import numpy as np
 
-# Display Title and Description
-st.title("Vendor Management Portal")
 
-spreadsheet = "https://docs.google.com/spreadsheets/d/1jOXDRWpif2QUIL7FvZdR6Izu-NbEd5fpckpWsR8ZDcM"
-
-# Establishing a Google Sheets connection
+st.set_page_config(layout="wide")
+url = "https://docs.google.com/spreadsheets/d/1DqyHkjSP-ykf1FqQp7R2FSbuUIGyIRgpad9J9WDKXck/edit#gid=0"
+st.title("DASHBOARD - PADRONIZAÇÃO AGIR")
 conn = st.connection("gsheets", type=GSheetsConnection)
 
-# Fetch existing vendors data
-existing_data = conn.read(spreadsheet=spreadsheet, usecols=list(range(5)))
-existing_data = existing_data.dropna(how="all")
+df = conn.read(spreadsheet=url, usecols=list(range(22)))
