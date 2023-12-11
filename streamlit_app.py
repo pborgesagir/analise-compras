@@ -15,4 +15,7 @@ conn = st.connection("gsheets", type=GSheetsConnection)
 df = conn.read(spreadsheet=url, usecols=list(range(34)))
 df = df.drop_duplicates()
 
+# Convert "DATA OC" column to datetime
+df["DATA OC"] = pd.to_datetime(df["DATA OC"], format='%d/%m/%Y', errors='coerce')
+
 st.dataframe(df)
