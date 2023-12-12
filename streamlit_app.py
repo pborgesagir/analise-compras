@@ -16,7 +16,7 @@ df = conn.read(spreadsheet=url, usecols=list(range(34)))
 df = df.drop_duplicates()
 
 # Convert "DATA OC" column to date
-#df["DATA OC"] = pd.to_datetime(df["DATA OC"].astype(str), format='%d/%m/%Y às %H:%M', errors='coerce').dt.date
+df["DATA OC"] = pd.to_datetime(df["DATA OC"].astype(str), format='%d/%m/%Y às %H:%M', errors='coerce')
 
 # Filter out rows where the date could not be parsed (NaT)
 df = df.dropna(subset=["DATA OC"])
